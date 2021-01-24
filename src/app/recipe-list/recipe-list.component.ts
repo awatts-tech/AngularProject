@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {RecipesApiService} from '../recipes-api.service'
 
 @Component({
   selector: 'app-recipe-list',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipeListComponent implements OnInit {
 
-  constructor() { }
+  constructor(public recipeAPI: RecipesApiService) { }
 
   ngOnInit(): void {
+    this.recipeAPI.getRecipes();
   }
 
 }
