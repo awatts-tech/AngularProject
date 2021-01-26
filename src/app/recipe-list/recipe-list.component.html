@@ -1,13 +1,16 @@
-<p>recipe-list stuff:</p>
-<div>
-    <h2>Search Results</h2>
-</div>
+    <h2>Recipes</h2>
+    <main>
+        <div class="recipe-item" *ngFor="let recipe of recipesAPI.recipes">
+        <h3>{{recipe.recipe.label}}</h3>
+        <img [src]="recipe.recipe.image" />
 
-<div *ngFor="let recipe of recipesAPI.recipes">
-    <h3>{{recipe.recipe.label}}</h3>
-</div>
-    
-<!-- from reddit lab -->
-    <!-- <section class="results">
-        <app-list-item *ngFor="let post of redditApi.results.data.children"[post]="post"></app-list-item>
-    </section> -->
+        <!-- <p>{{recipe.recipe.}}</p> -->
+
+        <!-- image here-->
+        <!--  -->
+    <!-- from reddit lab -->
+        <!-- <section class="results">
+            <app-list-item *ngFor="let post of redditApi.results.data.children"[post]="post"></app-list-item>
+        </section> -->
+
+

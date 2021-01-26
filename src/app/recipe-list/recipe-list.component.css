@@ -1,0 +1,31 @@
+h2{
+    display: flex;
+    justify-content: center;
+}
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.recipe-item{
+    display: grid;
+    width: 300px;
+    padding:50px;
+}
+
+.recipe-image{
+    display: flex;
+    justify-content: center;
+}
+
+h3{
+    display: flex;
+    justify-content: center;
+}
+
+a{
+    display: flex;
+    color: rgb(105, 20, 144);
+    justify-content: center;
+}
