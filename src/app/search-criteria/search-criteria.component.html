@@ -1,15 +1,33 @@
-<p>Search Criteria Stuff</p>
+
 <!-- This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule) -->
-<nav>
+<!-- <nav>
   <ul>
     <li><a routerLink="/Favorites">Favorites</a></li>
     <li><a routerLink="/Recipes">Find Recipes</a></li>
   </ul>
-</nav>
+</nav> -->
 <!-- The routed views render in the <router-outlet>-->
-<router-outlet></router-outlet>
+
 
 <!-- hamburger menu -->
 <!-- search bar that will route to /recipes-->
 <!-- take filter form (to-do list) -->
 <!-- filtering options -->
+
+
+
+<div class="navbar">
+  <a href="#home"><img class="logo" src="http://r69.cooltext.com/d.php?renderid=374931563395582&extension=png"></a>
+  <a href="#home">Home</a>
+  <a routerLink="/Recipes">Recipes</a>
+   <span> <form>
+    <input type="search" placeholder="Search for a recipe!">
+    <!-- Line 26 is how I think the search functionality will be set  up -->
+    <!-- <input [[{ngModel}]="search" name ="search" type="text" placeholder="Search for a recipe!">             -->
+    <button class="search-btn">Search</button>
+    </form>
+    <button class="favbtn" routerLink="/Favorites">Your favorites!</button>
+  </span>
+</div> 
+
+<router-outlet></router-outlet>

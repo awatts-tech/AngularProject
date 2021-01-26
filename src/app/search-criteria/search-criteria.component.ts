@@ -7,6 +7,7 @@ import {RecipesApiService} from '../recipes-api.service'
   styleUrls: ['./search-criteria.component.css']
 })
 export class SearchCriteriaComponent implements OnInit {
+  // search:string="";
 
   constructor(public recipeAPI: RecipesApiService) { }
 
