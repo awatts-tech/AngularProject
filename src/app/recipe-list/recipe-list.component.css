@@ -36,3 +36,10 @@ a{
     color: rgb(105, 20, 144);
     justify-content: center;
 }
+
+
+#favoritesbtn{
+    background-color: yellow;
+    color: black;
+
+}
