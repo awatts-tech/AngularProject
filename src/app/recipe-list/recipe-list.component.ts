@@ -1,13 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import {RecipesApiService} from '../recipes-api.service';
-
-interface Recipe{
-// insert data wanted from the API here
-  //title
-  //thumbnail
-  //link
-  //short description?
-}
+import { Component, OnInit } from '@angular/core';
+import { RecipesApiService } from '../recipes-api.service';
 
 @Component({
   selector: 'app-recipe-list',
@@ -15,11 +7,12 @@ interface Recipe{
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent implements OnInit {
-//recipe: Recipe;
-  constructor(public recipesAPI: RecipesApiService) { }
+  constructor(public recipeAPI: RecipesApiService) { }
 
   ngOnInit(): void {
-    this.recipesAPI.getRecipes();
+    this.recipeAPI.getRecipes();
   }
+
+  
 
 }

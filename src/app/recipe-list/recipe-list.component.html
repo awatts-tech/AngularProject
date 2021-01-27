@@ -1,13 +1,47 @@
-    <h2>Recipes</h2>
-    <main>
-        <div class="recipe-item" *ngFor="let recipe of recipesAPI.recipes">
-        <h3>{{recipe.recipe.label}}</h3>
-        <img [src]="recipe.recipe.image" />
+<h2>Recipes</h2>
+<main>
+    <div class="recipe-item" *ngFor="let recipe of recipeAPI.recipes">
+    <h3>{{recipe.recipe.label}}</h3>
+    <img [src]="recipe.recipe.image" />
 
-        <!-- <p>{{recipe.recipe.}}</p> -->
 
-        <!-- image here-->
-        <!--  -->
+    <!-- https://getbootstrap.com/docs/5.0/components/accordion/ -->
+    <div class="accordion">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="healthLabels">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Health Labels
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <!-- need to clean up ingredients formatting using ngFor:-->
+                    <p>{{recipe.recipe.healthLabels}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="ingredientLines">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Ingredients
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <!-- need to clean up ingredients formatting using ngFor:-->
+                    <p>{{recipe.recipe.ingredientLines}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <!-- shareAs or url or uri. Also want to make it say "Link to Recipe" and route to link frm API -->
+            <a href = "recipe.recipe.url">Link to Recipe</a>    
+        </div>       
+        
+
+
     <!-- from reddit lab -->
         <!-- <section class="results">
             <app-list-item *ngFor="let post of redditApi.results.data.children"[post]="post"></app-list-item>
