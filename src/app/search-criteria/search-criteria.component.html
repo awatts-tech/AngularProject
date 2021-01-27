@@ -11,18 +11,32 @@
 
 
 
-<div class="navbar">
-  <a href="#home"><img class="logo" src="http://r69.cooltext.com/d.php?renderid=374931563395582&extension=png"></a>
-  <a href="#home">Home</a>
-  <a routerLink="/Recipes">Recipes</a>
-   <span> <form>
-    <input type="search" placeholder="Search for a recipe!">
-    <!-- Line 26 is how I think the search functionality will be set  up -->
-    <!-- <input [[{ngModel}]="search" name ="search" type="text" placeholder="Search for a recipe!">             -->
-    <button class="search-btn">Search</button>
-    </form>
-    <button class="favbtn" routerLink="/Favorites">Your favorites!</button>
-  </span>
-</div> 
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <h1 class="display-1" href="#">The Munchies</h1>
+   
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  routerLink="/Recipes">Recipes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/Favorites">Favorites</a>
+        </li>
+      
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search for a recipe!" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit" id="search" >Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
 
 <router-outlet></router-outlet>
