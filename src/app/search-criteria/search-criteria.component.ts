@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {RecipesApiService} from '../recipes-api.service'
+import { RecipesApiService } from '../recipes-api.service'
 
 @Component({
   selector: 'app-search-criteria',
@@ -7,20 +7,16 @@ import {RecipesApiService} from '../recipes-api.service'
   styleUrls: ['./search-criteria.component.css']
 })
 export class SearchCriteriaComponent implements OnInit {
-  searchTerm:string="";
+  searchTerm: string = "";
 
-  constructor(public recipeAPI: RecipesApiService) {}
+  constructor(public recipeAPI: RecipesApiService) { }
 
-  search(){
+  search() {
     console.log("search was called");
     this.recipeAPI.getRecipesBySearchTerm(this.searchTerm);
   }
 
-//add function in recipe-list to say get recipe by API
-// -- double check our current recipe API function works
-
   ngOnInit(): void {
-    this.recipeAPI.getRecipes( );
+    this.recipeAPI.getRecipes();
   }
-
 }

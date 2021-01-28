@@ -4,8 +4,8 @@ h2{
 }
 
 button{
-    background-color: navy;
-    color: aliceblue;
+    background-color: rgb(43, 43, 189);
+    color: rgba(129, 177, 219, 0.911);
     border-radius: 8px;
 }
 
