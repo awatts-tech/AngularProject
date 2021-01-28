@@ -15,22 +15,16 @@ interface Recipe{
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent implements OnInit {
-  //recipe:Recipe;
+  
   constructor(public recipeAPI: RecipesApiService) {}
 
   favorite(recipe: Recipe){
-    console.log("the recipe is", recipe);
+    // console.log("the recipe is", recipe);
     this.recipeAPI.favorites.push(recipe);
-    console.log("the favorties are", this.recipeAPI.favorites);
+    // console.log("the favorties are", this.recipeAPI.favorites);
     }
-
-    //add function in recipe-list to say get recipe by API
-
   
   ngOnInit(): void {
     this.recipeAPI.getRecipes();
   }
-
-
-
 }

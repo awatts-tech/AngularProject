@@ -16,17 +16,30 @@ export class RecipesApiService {
     const requestUrl =
       this.getUrlWithAPIKey() + "&q=pizza" + "&q=pasta"; // add whatever params you want from here: https://developers.themoviedb.org/3/discover/movie-discover
 
-
     this.http.get(requestUrl).subscribe(
       (response: any) => {
-        console.log(response);
+        // console.log(response);
         this.recipes = response.hits;
-
       },
       (error) => {
         console.error(error);
       }
     );
+  }
+
+  getRecipesBySearchTerm(searchTerm: string){
+    const requestUrl =
+    this.getUrlWithAPIKey() + "&q=" + searchTerm;
+
+  this.http.get(requestUrl).subscribe(
+    (response: any) => {
+      // console.log(response);
+      this.recipes = response.hits;
+    },
+    (error) => {
+      console.error(error);
+    }
+  );
   }
 
   getUrlWithAPIKey() {

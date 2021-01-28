@@ -2,20 +2,24 @@
 
 <!-- The routed views render in the <router-outlet>-->
 
-
 <!-- hamburger menu -->
-    <!--burger bar: <i class="fas fa-hamburger"></i> -->
+<!--burger bar: <i class="fas fa-hamburger"></i> -->
 <!-- search bar that will route to /recipes-->
-<!-- take filter form (to-do list) -->
 <!-- filtering options -->
-
-
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <h1 class="display-1" href="#">The Munchies</h1>
-   
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -24,17 +28,29 @@
           <a class="nav-link active" aria-current="page" href="#home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"  routerLink="/Recipes">Recipes</a>
+          <a class="nav-link" routerLink="/Recipes">Recipes</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/Favorites">Favorites</a>
         </li>
-      
       </ul>
-      <form class="d-flex">
-        <input [(ngModel)]="searchTerm" class="form-control me-2" type="search" placeholder="Search for a recipe!" aria-label="Search">
-        <button (click)="search()" class="btn btn-outline-success" type="submit" id="search" >Search</button>
-      </form>
+      <div class="d-flex">
+        <input
+          [(ngModel)]="searchTerm"
+          class="form-control me-2"
+          type="search"
+          placeholder="Search for a recipe!"
+          aria-label="Search"
+        />
+        <button
+          (click)="search()"
+          class="btn btn-outline-success"
+          type="submit"
+          id="search"
+        >
+          Search
+        </button>
+      </div>
     </div>
   </div>
 </nav>

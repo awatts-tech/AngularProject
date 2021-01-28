@@ -12,9 +12,12 @@ export class SearchCriteriaComponent implements OnInit {
   constructor(public recipeAPI: RecipesApiService) {}
 
   search(){
-    // this function should say get recipe by search term
-    //add function in recipe-list to say get recipe by API
+    console.log("search was called");
+    this.recipeAPI.getRecipesBySearchTerm(this.searchTerm);
   }
+
+//add function in recipe-list to say get recipe by API
+// -- double check our current recipe API function works
 
   ngOnInit(): void {
     this.recipeAPI.getRecipes( );
