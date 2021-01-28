@@ -1,2 +1,7 @@
-<p>favorites-page stuff:</p>
-<h2>Delicious!</h2>
+<h2>Recipe Box: Favorites</h2>
+<div *ngIf="recipeAPI.favorites">
+    <div *ngFor="let favorite of recipeAPI.favorites; let i = index;">
+        {{favorite.recipe.label}}
+        <!-- <button (click)="removeFavorite(i)">Remove</button> -->
+    </div>
+</div>

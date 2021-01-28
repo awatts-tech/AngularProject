@@ -9,11 +9,13 @@ export class RecipesApiService {
   appId = "de013f42";
   url = "https://api.edamam.com/search";
   recipes: any[] = [];
+  favorites: any[] = [];
   constructor(private http: HttpClient) {}
 
   getRecipes() {
     const requestUrl =
-      this.getUrlWithAPIKey() + "&q=pizza"; // add whatever params you want from here: https://developers.themoviedb.org/3/discover/movie-discover
+      this.getUrlWithAPIKey() + "&q=pizza" + "&q=pasta"; // add whatever params you want from here: https://developers.themoviedb.org/3/discover/movie-discover
+
 
     this.http.get(requestUrl).subscribe(
       (response: any) => {

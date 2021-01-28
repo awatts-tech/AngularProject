@@ -7,9 +7,14 @@ import {RecipesApiService} from '../recipes-api.service'
   styleUrls: ['./search-criteria.component.css']
 })
 export class SearchCriteriaComponent implements OnInit {
-  // search:string="";
+  searchTerm:string="";
 
-  constructor(public recipeAPI: RecipesApiService) { }
+  constructor(public recipeAPI: RecipesApiService) {}
+
+  search(){
+    // this function should say get recipe by search term
+    //add function in recipe-list to say get recipe by API
+  }
 
   ngOnInit(): void {
     this.recipeAPI.getRecipes( );
