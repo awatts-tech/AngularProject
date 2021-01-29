@@ -2,15 +2,16 @@
 <h3>Search for your next favorite Recipe</h3>
 <h4>Filter By:</h4>
   <div class="form-check">
-    <input (change)="changed()" [(ngModel)]="peanutFree" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+    <!-- LABELS: Sugar-Conscious,Vegan,Vegetarian,Peanut-Free,Tree-Nut-Free,Alcohol-Free -->
+    <input (change)="activateFilter()" [(ngModel)]="peanutFree" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
     <label class="form-check-label" for="flexCheckDefault">
       Peanut-Free
     </label>
   </div>
   <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+    <input (change)="activateFilter()" [(ngModel)]="vegan" class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
     <label class="form-check-label" for="flexCheckChecked">
-      Checked checkbox
+      Vegan
     </label>
   </div>
   

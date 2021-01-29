@@ -25,11 +25,17 @@ export class RecipeListComponent implements OnInit {
   }
   
   peanutFree:boolean = false;
-  dairyFree:boolean = false;
+  vegan:boolean = false;
 
 
-  changed(){
-    this.recipeAPI.getRecipesFiltered(this.peanutFree, this.dairyFree);
+  activateFilter(){
+    this.recipeAPI.getRecipesFiltered(this.peanutFree, this.vegan);
+    console.log("the filtering call works")
+  //remove recipes from array that dont meet filter criteria - but how?!
+    // if this.recipeAPI.recipes.healthLabel = !this.peanutFree{
+    //   this.recipeAPI.recipes.splice();
+    // }
+  
   }
 
   

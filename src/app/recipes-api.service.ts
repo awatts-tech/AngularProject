@@ -28,14 +28,14 @@ export class RecipesApiService {
     );
   }
 
-  getRecipesFiltered(peanutFree: boolean, dairyFree: boolean){
+  getRecipesFiltered(peanutFree: boolean, vegan: boolean){
     let requestUrl =
     this.getUrlWithAPIKey() + "&q=" + this.searchTerm;
     if (peanutFree) {
-      requestUrl+="&diet=peanut-free"
+      requestUrl+="&health=peanut-free"
     }
-    if (dairyFree) {
-      requestUrl+="&diet=dairy-free"
+    if (vegan) {
+      requestUrl+="&health=vegan"
     }
   this.http.get(requestUrl).subscribe(
     (response: any) => {
