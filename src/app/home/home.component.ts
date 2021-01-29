@@ -9,7 +9,7 @@ import { RecipesApiService } from '../recipes-api.service';
 export class HomeComponent implements OnInit {
   searchTerm: string = "";
 
-  constructor(public recipeAPI: RecipesApiService) {}
+  constructor(public recipeAPI: RecipesApiService) { }
 
   search() {
     console.log("search was called");

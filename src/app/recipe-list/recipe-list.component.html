@@ -1,34 +1,115 @@
 <h2>Recipes</h2>
 <h3>Search for your next favorite Recipe</h3>
 <h4>Filter By:</h4>
+<div class="form-check">
+  <!-- LABELS: Sugar-Conscious,Vegan,Vegetarian,Peanut-Free,Tree-Nut-Free,Alcohol-Free -->
   <div class="form-check">
-    <!-- LABELS: Sugar-Conscious,Vegan,Vegetarian,Peanut-Free,Tree-Nut-Free,Alcohol-Free -->
-    <input (change)="activateFilter()" [(ngModel)]="peanutFree" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-    <label class="form-check-label" for="flexCheckDefault">
-      Peanut-Free
-    </label>
+    <input
+      (change)="activateFilter()"
+      [(ngModel)]="glutenFree"
+      class="form-check-input"
+      type="checkbox"
+      value=""
+      id="flexCheckChecked"
+    />
+    <label class="form-check-label" for="flexCheckChecked"> Gluten Free </label>
   </div>
   <div class="form-check">
-    <input (change)="activateFilter()" [(ngModel)]="vegan" class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-    <label class="form-check-label" for="flexCheckChecked">
-      Vegan
-    </label>
+    <input
+      (change)="activateFilter()"
+      [(ngModel)]="dairyFree"
+      class="form-check-input"
+      type="checkbox"
+      value=""
+      id="flexCheckChecked"
+    />
+    <label class="form-check-label" for="flexCheckChecked"> Dairy Free </label>
   </div>
-  
+  <div class="form-check">
+    <input
+      (change)="activateFilter()"
+      [(ngModel)]="peanutFree"
+      class="form-check-input"
+      type="checkbox"
+      value=""
+      id="flexCheckDefault"
+    />
+    <label class="form-check-label" for="flexCheckDefault"> Peanut-Free </label>
+  </div>
+  <div class="form-check">
+   <input
+      (change)="activateFilter()"
+      [(ngModel)]="vegetarian"
+      class="form-check-input"
+      type="checkbox"
+      value=""
+      id="flexCheckChecked"
+    />
+    <label class="form-check-label" for="flexCheckChecked"> Vegetarian </label>
+  </div>
+  <div class="form-check">
+    <input
+      (change)="activateFilter()"
+      [(ngModel)]="vegan"
+      class="form-check-input"
+      type="checkbox"
+      value=""
+      id="flexCheckChecked"
+    />
+    <label class="form-check-label" for="flexCheckChecked"> Vegan </label>
+  </div>
+  <div class="form-check">
+    <input
+      (change)="activateFilter()"
+      [(ngModel)]="keto"
+      class="form-check-input"
+      type="checkbox"
+      value=""
+      id="flexCheckChecked"
+    />
+    <label class="form-check-label" for="flexCheckChecked"> Keto </label>
+  </div>
+  <div class="form-check">
+    <input
+      (change)="activateFilter()"
+      [(ngModel)]="kosher"
+      class="form-check-input"
+      type="checkbox"
+      value=""
+      id="flexCheckChecked"
+    />
+    <label class="form-check-label" for="flexCheckChecked"> Kosher </label>
+  </div>
+  <div class="form-check">
+    <input
+      (change)="activateFilter()"
+      [(ngModel)]="hallal"
+      class="form-check-input"
+      type="checkbox"
+      value=""
+      id="flexCheckChecked"
+    />
+    <label class="form-check-label" for="flexCheckChecked"> Hallal </label>
+  </div>
+</div>
+
 <main>
-  <div class="recipe-item" *ngFor="let recipe of recipeAPI.recipes; let i=index">
+  <div
+    class="recipe-item"
+    *ngFor="let recipe of recipeAPI.recipes; let i = index"
+  >
     <h3>{{ recipe.recipe.label }}</h3>
     <img [src]="recipe.recipe.image" />
 
     <!-- https://getbootstrap.com/docs/5.0/components/accordion/ -->
     <div class="accordion">
       <div class="accordion-item">
-        <h2 class="accordion-header" [id]="'healthLabels'+i">
+        <h2 class="accordion-header" [id]="'healthLabels' + i">
           <button
             class="accordion-button"
             type="button"
             data-bs-toggle="collapse"
-            [attr.data-bs-target]="'#collapseOne'+i"
+            [attr.data-bs-target]="'#collapseOne' + i"
             aria-expanded="true"
             aria-controls="collapseOne"
           >
@@ -36,7 +117,7 @@
           </button>
         </h2>
         <div
-          [id]="'collapseOne'+i"
+          [id]="'collapseOne' + i"
           class="accordion-collapse collapse show"
           aria-labelledby="headingOne"
           data-bs-parent="#accordionExample"
