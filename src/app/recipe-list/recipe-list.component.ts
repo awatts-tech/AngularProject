@@ -24,6 +24,8 @@ export class RecipeListComponent implements OnInit {
     // console.log("the favorties are", this.recipeAPI.favorites);
     }
   
+
+  
   ngOnInit(): void {
     this.recipeAPI.getRecipes();
   }

@@ -2,6 +2,6 @@
 <div *ngIf="recipeAPI.favorites">
     <div *ngFor="let favorite of recipeAPI.favorites; let i = index;">
         {{favorite.recipe.label}}
-        <!-- <button (click)="removeFavorite(i)">Remove</button> -->
+        <button (click)="removeFavorite(i)">Remove</button>
     </div>
 </div>
