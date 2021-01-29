@@ -1,5 +1,5 @@
 <h2>Recipe Box: Favorites</h2>
-<div *ngIf="recipeAPI.favorites">
+<div *ngIf="recipeAPI.favorites.length">
     <div *ngFor="let favorite of recipeAPI.favorites; let i = index;">
         {{favorite.recipe.label}}
         <button (click)="removeFavorite(i)">Remove</button>

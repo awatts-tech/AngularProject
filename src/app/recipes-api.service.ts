@@ -14,7 +14,7 @@ export class RecipesApiService {
 
   getRecipes() {
     const requestUrl =
-      this.getUrlWithAPIKey() + "&q=pizza" + "&q=pasta"; // add whatever params you want from here: https://developers.themoviedb.org/3/discover/movie-discover
+      this.getUrlWithAPIKey() + ""; // add whatever params you want from here: https://developers.themoviedb.org/3/discover/movie-discover
 
     this.http.get(requestUrl).subscribe(
       (response: any) => {

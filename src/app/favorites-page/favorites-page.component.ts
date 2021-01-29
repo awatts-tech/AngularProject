@@ -19,9 +19,9 @@ export class FavoritesPageComponent implements OnInit {
 
   constructor(public recipeAPI: RecipesApiService) {}
 
-  removeFavorite(recipe: Recipe){
+  removeFavorite(recipe: number){
     // console.log("the recipe is", recipe);
-    this.recipeAPI.favorites.splice(recipe);
+    this.recipeAPI.favorites.splice(recipe, 1);
     // console.log("the favorties are", this.recipeAPI.favorites);
     }
 
