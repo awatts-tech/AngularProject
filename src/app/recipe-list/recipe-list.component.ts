@@ -22,8 +22,15 @@ export class RecipeListComponent implements OnInit {
     // console.log("the recipe is", recipe);
     this.recipeAPI.favorites.push(recipe);
     // console.log("the favorties are", this.recipeAPI.favorites);
-    }
+  }
   
+  peanutFree:boolean = false;
+  dairyFree:boolean = false;
+
+
+  changed(){
+    this.recipeAPI.getRecipesFiltered(this.peanutFree, this.dairyFree);
+  }
 
   
   ngOnInit(): void {

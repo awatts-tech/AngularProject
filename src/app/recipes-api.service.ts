@@ -10,6 +10,7 @@ export class RecipesApiService {
   url = "https://api.edamam.com/search";
   recipes: any[] = [];
   favorites: any[] = [];
+  searchTerm: string = "";
   constructor(private http: HttpClient) {}
 
   getRecipes() {
@@ -27,9 +28,30 @@ export class RecipesApiService {
     );
   }
 
+  getRecipesFiltered(peanutFree: boolean, dairyFree: boolean){
+    let requestUrl =
+    this.getUrlWithAPIKey() + "&q=" + this.searchTerm;
+    if (peanutFree) {
+      requestUrl+="&diet=peanut-free"
+    }
+    if (dairyFree) {
+      requestUrl+="&diet=dairy-free"
+    }
+  this.http.get(requestUrl).subscribe(
+    (response: any) => {
+      // console.log(response);
+      this.recipes = response.hits;
+    },
+    (error) => {
+      console.error(error);
+    }
+  );
+  }
+
   getRecipesBySearchTerm(searchTerm: string){
     const requestUrl =
     this.getUrlWithAPIKey() + "&q=" + searchTerm;
+    this.searchTerm=searchTerm
 
   this.http.get(requestUrl).subscribe(
     (response: any) => {

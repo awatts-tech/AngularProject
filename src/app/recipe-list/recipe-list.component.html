@@ -1,4 +1,19 @@
 <h2>Recipes</h2>
+<h3>Search for your next favorite Recipe</h3>
+<h4>Filter By:</h4>
+  <div class="form-check">
+    <input (change)="changed()" [(ngModel)]="peanutFree" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+    <label class="form-check-label" for="flexCheckDefault">
+      Peanut-Free
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+    <label class="form-check-label" for="flexCheckChecked">
+      Checked checkbox
+    </label>
+  </div>
+  
 <main>
   <div class="recipe-item" *ngFor="let recipe of recipeAPI.recipes; let i=index">
     <h3>{{ recipe.recipe.label }}</h3>
