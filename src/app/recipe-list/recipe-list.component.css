@@ -38,13 +38,17 @@ button{
 
 .recipe-item{
     display: grid;
-    width: 500px;
+    width: 400px;
     padding:50px;
 }
 
 .recipe-image{
     display: flex;
     justify-content: center;
+}
+
+img{
+    border-radius: 8px;
 }
 
 a{
