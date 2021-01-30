@@ -4,7 +4,7 @@ h2{
 }
 
 button{
-    background-color: rgb(43, 43, 189);
+    background-color: rgb(32, 32, 144);
     color: rgba(129, 177, 219, 0.911);
     border-radius: 8px;
 }
@@ -31,9 +31,12 @@ h3{
     justify-content: center;
 }
 
+.accordian-item{
+    color: aliceblue;
+}
+
 a{
     display: flex;
-    color: rgb(105, 20, 144);
     justify-content: center;
 }
 

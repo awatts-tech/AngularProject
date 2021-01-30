@@ -101,16 +101,16 @@
     <h3>{{ recipe.recipe.label }}</h3>
     <img [src]="recipe.recipe.image" />
 
-    <!-- https://getbootstrap.com/docs/5.0/components/accordion/ -->
-    <div class="accordion">
+    <!-- https://getbootstrap.com/docs/5.0/components/accordion/-->
+    <div class="accordion" id="accordianExample">
       <div class="accordion-item">
         <h2 class="accordion-header" [id]="'healthLabels' + i">
           <button
-            class="accordion-button"
+            class="accordion-button collapsed"
             type="button"
             data-bs-toggle="collapse"
             [attr.data-bs-target]="'#collapseOne' + i"
-            aria-expanded="true"
+            aria-expanded="false"
             aria-controls="collapseOne"
           >
             Health Labels
@@ -118,24 +118,23 @@
         </h2>
         <div
           [id]="'collapseOne' + i"
-          class="accordion-collapse collapse show"
+          class="accordion-collapse collapse"
           aria-labelledby="headingOne"
           data-bs-parent="#accordionExample"
         >
           <div class="accordion-body">
-            <!-- need to clean up ingredients formatting using ngFor:-->
             <p>{{ recipe.recipe.healthLabels }}</p>
           </div>
         </div>
       </div>
 
       <div class="accordion-item">
-        <h2 class="accordion-header" id="ingredientLines">
+        <h2 class="accordion-header" [id]="'ingredientLines' + i">
           <button
             class="accordion-button collapsed"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#collapseTwo"
+            [attr.data-bs-target]="'#collapseTwo' + i"
             aria-expanded="false"
             aria-controls="collapseTwo"
           >
@@ -143,14 +142,13 @@
           </button>
         </h2>
         <div
-          id="collapseTwo"
+          [id]="'collapseTwo' + i"
           class="accordion-collapse collapse"
           aria-labelledby="headingTwo"
           data-bs-parent="#accordionExample"
         >
           <div class="accordion-body">
-            <!-- need to clean up ingredients formatting using ngFor:-->
-            <p>{{ recipe.recipe.ingredientLines }}</p>
+            <p *ngFor="let line of recipe.recipe.ingredientLines">{{line}}</p>
           </div>
         </div>
       </div>
@@ -164,11 +162,6 @@
           Favorite
         </button>
       </div>
-
-      <!-- from reddit lab -->
-      <!-- <section class="results">
-            <app-list-item *ngFor="let post of redditApi.results.data.children"[post]="post"></app-list-item>
-        </section> -->
     </div>
   </div>
 </main>

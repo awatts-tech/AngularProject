@@ -1,0 +1,17 @@
+h2{
+    display: flex;
+    justify-content: center;
+}
+
+button{
+    background-color: rgb(255, 60, 0);
+    color: black;
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+div{
+    font-size: 20px;
+    padding: 1%;
+}
+
