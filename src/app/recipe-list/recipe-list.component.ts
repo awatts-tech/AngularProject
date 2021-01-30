@@ -31,17 +31,16 @@ export class RecipeListComponent implements OnInit {
   vegan: boolean = false;
   keto: boolean = false;
   kosher: boolean = false;
-  hallal: boolean = false;
+  porkFree: boolean = false;
 
   activateFilter() {
     this.recipeAPI.getRecipesFiltered(this.glutenFree, this.dairyFree, this.peanutFree,
-    this.vegetarian, this.vegan, this.keto, this.kosher, this.hallal);
+    this.vegetarian, this.vegan, this.keto, this.kosher, this.porkFree);
     console.log("the filtering call works")
     //remove recipes from array that dont meet filter criteria - but how?!
     // if this.recipeAPI.recipes.healthLabel = !this.peanutFree{
     //   this.recipeAPI.recipes.splice();
     // }
-
   }
 
   ngOnInit(): void {

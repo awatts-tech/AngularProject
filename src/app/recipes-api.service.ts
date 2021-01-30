@@ -30,7 +30,7 @@ export class RecipesApiService {
 
 
   getRecipesFiltered(glutenFree: boolean, dairyFree: boolean, peanutFree: boolean,
-    vegetarian: boolean, vegan: boolean, keto: boolean, kosher: boolean, hallal: boolean) {
+    vegetarian: boolean, vegan: boolean, keto: boolean, kosher: boolean, porkFree: boolean) {
     let requestUrl =
       this.getUrlWithAPIKey() + "&q=" + this.searchTerm;
     if (glutenFree) {
@@ -48,13 +48,13 @@ export class RecipesApiService {
     if (vegan) {
       requestUrl += "&health=vegan"
     } if (keto) {
-      requestUrl += "&health=keto"
+      requestUrl += "&health=keto-friendly"
     }
     if (kosher) {
       requestUrl += "&health=kosher"
     }
-    if (hallal) {
-      requestUrl += "&health=hallal"
+    if (porkFree) {
+      requestUrl += "&health=pork-free"
     }
     
     this.http.get(requestUrl).subscribe(
